@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nduduzo Nxasane | Portfolio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="loader"><div class="spinner"></div></div>
+
+<header>
+ <img src="profile.jpg" alt="Profile">
+  <h1>Nduduzo Nxasane</h1>
+  <p id="typing"></p>
+
+  <a href="CV.pdf" class="btn" target="_blank">View CV</a>
+  <a href="https://github.com/uSkhonzaNgenkomo" class="btn">GitHub</a>
+  <a href="https://za.linkedin.com/in/nduduzonxasane27" class="btn">LinkedIn</a>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#education">Education</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<button id="themeToggle" class="btn">🌙</button>
+</nav>
+
+<section id="about">
+<h2>About Me</h2>
+<div class="card">
+<p>I am a Bachelor of Commerce Honours graduate in Information Systems from the University of KwaZulu-Natal. I build modern applications using C#, ASP.NET, Java, and SQL. I enjoy solving real-world problems and continuously improving my skills.</p>
+</div>
+</section>
+
+<section id="education">
+<h2>Education</h2>
+
+<div class="card">
+  <h3>Bachelor of Commerce Honours in Information Systems and Technology - 2025</h3>
+  <p>University of KwaZulu-Natal</p>
+</div>
+
+<div class="card">
+  <h3>Bachelor of Commerce in Information Systems and Technology - 2024</h3>
+  <p>University of KwaZulu-Natal</p>
+</div>
+
+<div class="card">
+  <h3>National Senior Certificate - 2019</h3>
+  <p>Ladysmith High School</p>
+</div>
+
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="card">
+<span class="btn">C#</span>
+<span class="btn">Java</span>
+<span class="btn">ASP.NET</span>
+<span class="btn">SQL Server</span>
+<span class="btn">MySQL</span>
+<span class="btn">HTML</span>
+<span class="btn">WordPress</span>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+
+<div class="card">
+  <h3>POS & Inventory System</h3>
+  <p>C#, ASP.NET, SQL Server</p>
+  <a href="https://github.com/uSkhonzaNgenkomo/POS-Inventory-System" class="btn">View Code</a>
+</div>
+
+<div class="card">
+  <h3>School Management System</h3>
+  <p>C# Application</p>
+  <a href="https://github.com/uSkhonzaNgenkomo/School-Management-System" class="btn">View Code</a>
+</div>
+
+<div class="card">
+  <h3>Android Apps</h3>
+  <p>Java (Android Studio)</p>
+  <a href="https://github.com/uSkhonzaNgenkomo/ToDo-App" class="btn">View Code</a>
+</div>
+
+<div class="card">
+  <h3>E-commerce Store</h3>
+  <p>WordPress, WooCommerce</p>
+</div>
+
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+
+<div class="card">
+<p>📧 <a href="mailto:nduh2147@gmail.com">nduh2147@gmail.com</a></p>
+<p>📱 <a href="tel:+27717090356">+27 71 709 0356</a></p>
+</div>
+
+<div class="card">
+<form action="https://formspree.io/f/mlgapwbo" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message" required></textarea>
+<button type="submit" class="btn">Send Message</button>
+</form>
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 Nduduzo Nxasane</p>
+</footer>
+
+<script>
+// Loader
+window.addEventListener('load',()=>{document.getElementById('loader').style.display='none'})
+
+// Scroll animation
+const sections=document.querySelectorAll('section')
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){entry.target.classList.add('show')}})
+},{threshold:0.2})
+sections.forEach(section=>observer.observe(section))
+
+// Typing effect
+const text = "Aspiring Software Developer";
+let i = 0;
+function type() {
+  if (i < text.length) {
+    document.getElementById("typing").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(type, 50);
+  }
+}
+type();
+
+// Dark/Light mode toggle
+const toggle = document.getElementById('themeToggle');
+toggle.addEventListener('click', ()=>{
+  document.body.classList.toggle('light-mode');
+  toggle.textContent = document.body.classList.contains('light-mode') ? '☀️' : '🌙';
+});
+</script>
+
+</body>
+</html>
